@@ -15,7 +15,10 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-
+      - name: Debug source files
+        run: |
+          ls -la
+          tar -czvf /tmp/debug.tar.gz ./
       - name: Copy project and server_data to server via SSH
         uses: appleboy/scp-action@v0.1.4
         with:
